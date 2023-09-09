@@ -1,26 +1,23 @@
-<mxfile host="app.diagrams.net" modified="2023-09-08T15:38:00.906Z" agent="Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="OsiVL6Omww89s2caaSiw" version="21.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-09T02:25:30.327Z" agent="Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="ZhJcsujQUDgPc_scSI36" version="21.7.3" type="github">
   <diagram name="Page-1" id="Tx2Y7DHx7KfpgCzlKDU4">
     <mxGraphModel dx="814" dy="436" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="QlvXsq2RKnnYLFsi7A30-1" value="Life before death" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="60" y="180" width="120" height="60" as="geometry" />
+        <mxCell id="DddoxypXK8zhNxieMubF-4" value="Figgldygrak" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="270" y="150" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="QlvXsq2RKnnYLFsi7A30-3" value="Strength before weakness" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="220" y="180" width="120" height="60" as="geometry" />
+        <mxCell id="DddoxypXK8zhNxieMubF-5" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Dallin Soukup, Tyler Le&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="120" y="210" width="440" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="QlvXsq2RKnnYLFsi7A30-4" value="Journey before destination" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="180" width="120" height="60" as="geometry" />
+        <mxCell id="DddoxypXK8zhNxieMubF-6" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Main&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ sc: Scanner&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ repeat: boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ word: String&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ method(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="290" y="270" width="160" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="QlvXsq2RKnnYLFsi7A30-5" value="SANDERSON" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="540" y="180" width="120" height="60" as="geometry" />
+        <mxCell id="DddoxypXK8zhNxieMubF-7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Wordlist&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ words: String[]&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ choose(): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="270" width="160" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="BbV9cb5FbNp7SpQ2vTqq-1" value="wordle stuff go here" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="330" y="270" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="BbV9cb5FbNp7SpQ2vTqq-2" value="why are you reading this message instead of Way of Kings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="270" width="120" height="60" as="geometry" />
+        <mxCell id="DddoxypXK8zhNxieMubF-8" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Match&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ field: Type&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setWords(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="30" y="270" width="160" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
