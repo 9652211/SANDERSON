@@ -1,4 +1,4 @@
-public class wordlist {
+public class Wordlist {
     // provide by:
     String[] wordsLong = { "Ability", "Backing", "Cabinet",
             "Absence", "Balance", "Calibre",
