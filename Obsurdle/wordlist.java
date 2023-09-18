@@ -1,7 +1,3 @@
-import java.lang.invoke.ClassSpecializer.Factory;
-
-import javax.naming.Binding;
-
 public class wordlist {
     // provide by:
     String[] wordsLong = { "Ability", "Backing", "Cabinet",
