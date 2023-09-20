@@ -7,10 +7,12 @@ public class TObsurdle {
         Wordlist pintoBeans = new Wordlist();
         Random randVal = new Random();
         Scanner beans = new Scanner(System.in);
+        Match sameT = new Match();
 
         // Boolean Dec. / Variable Dec.
         boolean runtime = true;
         boolean lengthMatch = true;
+        boolean choese = true;
         int guessNum = 0;
 
         // Grab a value for the array; Chooses word
@@ -39,27 +41,33 @@ public class TObsurdle {
         System.out.println("                ");
         System.out.println("                ");
         System.out.println("Welcome to OBSURDLE.");
+        System.out.println("The rules are similar to Wordle:");
+        System.out.println("You are trying to guess a seven-letter word.");
+        System.out.println("You'll be told whether you get a letter correctly guessed by these indicators: □ ■");
+        System.out.println("Example Word: Poggers");
+        System.out.println("| ■ | - | - | - | - | □ | □ |");
+        System.out.println();
+        System.out.println("| □ | indicates a right letter, wrong position,");
+        System.out.println("| ■ | indicates a right letter, right position,");
+        System.out.println("| - | indicates a wrong letter.");
+        System.out.println();
+        System.out.println("You will get 7 tries to get the word.");
+        System.out.println("[Press ENTER to continue]");
+        beans.nextLine();
         while (runtime) {
             if (!lengthMatch) {
                 System.out.println("Your word isn't seven letters long! Please try again!");
                 lengthMatch = true;
             }
-            System.out.println("The rules are similar to Wordle:");
-            System.out.println("You are trying to guess a seven-letter word.");
-            System.out.println("You'll be told whether you get a letter correctly guessed by these indicators: □ ■");
-            System.out.println("Example Word: Poggers");
-            System.out.println("| ■ |   |   |   |   | □ | □ |");
-            System.out.println();
-            System.out.println("| □ | indicates a right letter, wrong position,");
-            System.out.println("| ■ | indicates a right letter, right position,");
-            System.out.println("|   | indicates a wrong letter.");
-            System.out.println();
-            System.out.println("You will get 6 tries to get the word.");
-            System.out.println("[Press ENTER to continue]");
-            beans.nextLine();
-            System.out.println("To begin, guess a 7-letter word.");
+            if (guessNum == 0) {
+                System.out.println("To begin, guess a 7-letter word.");
+            } else if (guessNum <= 7){
+                System.out.println("\n" +"Make another guess!");
+                System.out.println("Guesses Left = " + (7-guessNum));
+            } else if (guessNum > 7){
+                System.out.println("Oops, you're out of tries! Thanks for playing!");
+            }
             String guess = beans.nextLine();
-
             // Word Validity
             char[] gLetters = guess.toCharArray();
             if (guess.length() != 7) {
@@ -68,14 +76,10 @@ public class TObsurdle {
             // // Game Logic
             if (lengthMatch) {
                 System.out.println(chosenWord);
-                for (int i = 0; i < 7; i++) {
-                    System.out.println(cLetters[i] + " " + gLetters[i]);
-                }
-                runtime = false;
+                sameT.setWords(chosenWord, guess);
+                System.out.print(sameT.matchText());
+                guessNum ++;
             }
-            System.out.print("| ");
-            System.out.print(check);
-            System.out.print(" |");
             // beans.close();
         }
     }
