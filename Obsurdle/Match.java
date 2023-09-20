@@ -7,10 +7,10 @@ public class Match {
 		this.g = guess;
 	}
 	public static String matchText() {
-		String output = "";
-		for(int i = 0; i<7; i++) {
-			char check = ' ';
-			for(int j = 0; j<7; j++) {
+		String output = "| ";
+		for(int j = 0; j<7; j++) {
+			char check = '-';
+			for(int i = 0; i<7; i++) {
 				if(w.charAt(i)==g.charAt(j)) {
 					if (i==j) {
 						check = '■';
@@ -19,7 +19,7 @@ public class Match {
 					}
 				}
 			}
-			output = output + check;
+			output = output + check + " | ";
 		}
 		return output;
 	}
