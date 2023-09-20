@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Obsurdle {
+public class TObsurdle {
     public static void main(String[] args) {
         // Import Functions
         Wordlist pintoBeans = new Wordlist();
