@@ -9,25 +9,58 @@ public class Obsurdle {
 		Random rand = new Random();
 		Match match = new Match();
 		int wordCount = 500;
-		boolean repeat = false;
+		boolean repeat = true;
+		boolean win = false;
 		int maxTries = 7;
 		startScreen();
-		while (repeat = true) {
+		System.out.println("            ");
+		System.out.println("            ");
+		while (repeat) {
 			int tries = 0;
 			String word = wordlist[rand.nextInt(wordCount)];
-			System.out.println(word);
-			while (tries < maxTries) {
+			while ((tries < maxTries)&&(!win)) {
 				int triesLeft = maxTries - tries;
-				System.out.println("            ");
-				System.out.println("            ");
+				System.out.println("                             ");
+				System.out.println("                             ");
 				System.out.println("Guess a 7-letter word: ");
 				String guess = sc.nextLine();
-				tries += 1;
-				match.setWords(word, guess);
-				System.out.println("Here's how you did: " + match.matchText());
-				System.out.println("You have " + tries + " tries left.");
+				if(guess.length() == 7) {
+					tries += 1;
+					match.setWords(word, guess);
+					if(match.matchText().equals("| ■ | ■ | ■ | ■ | ■ | ■ | ■ |")) {
+						win = true;
+						System.out.println("You won!!!");
+					} else {
+						System.out.println("Here's how you did: " + match.matchText());
+						System.out.println("You have " + (maxTries-tries) + " tries left.");
+					}
+				} else {
+					System.out.println("Your word wasn't 7 letters. Try again");
+				}
+			}
+			if(!win) {
+				System.out.println("                             ");
+				System.out.println("                             ");
+				System.out.println("                             ");
+				System.out.println("                             ");
+				System.out.println("Sorry, you lost");
+			}
+			endScreen();
+			System.out.println("Would you like to play again? If so, press 1:");
+			String rep = sc.nextLine();
+			if(rep.equals("1")) {
+				win = false;
+				tries = 0;
+				System.out.println("                             ");
+				System.out.println("                             ");
+				System.out.println("                             ");
+				System.out.println("                             ");
+				System.out.println("Hello again!");
+			} else {
+				repeat = false;
 			}
 		}
+		System.out.println("Have a nice day!");
 	}
 
 	public static void startScreen() {
@@ -58,8 +91,28 @@ public class Obsurdle {
         System.out.println("| □ | indicates a right letter, wrong position,");
         System.out.println("| ■ | indicates a right letter, right position,");
         System.out.println("|   | indicates a wrong letter.");
-        System.out.println();
-        System.out.println("You will get 6 tries to get the word.");
+        System.out.println("You will get 7 tries to get the word.");
+	}
+	
+	public static void endScreen() {
+		System.out.println("Thanks for playing...");
+		System.out.println(" --- --- --- --- --- --- --- ");
+		System.out.println("| O | B | S | U | R | D | L |");
+		System.out.println(" --- --- --- --- --- --- --- ");
+		System.out.println("| E | O | B | S | U | R | D |");
+		System.out.println(" --- --- --- --- --- --- --- ");
+		System.out.println("| L | E | O | B | S | U | R |");
+		System.out.println(" --- --- --- --- --- --- --- ");
+		System.out.println("| D | L | E | O | B | S | U |");
+		System.out.println(" --- --- --- --- --- --- --- ");
+		System.out.println("| R | D | L | E | O | B | S |");
+		System.out.println(" --- --- --- --- --- --- --- ");
+		System.out.println("| U | R | D | L | E | O | B |");
+		System.out.println(" --- --- --- --- --- --- --- ");
+		System.out.println("| S | U | R | D | L | E | ! |");
+		System.out.println(" --- --- --- --- --- --- --- ");
+		System.out.println("                             ");
+		System.out.println("                             ");
 	}
 
 	public static String[] wordlist = { "Ability", "Backing", "Cabinet", "Absence", "Balance", "Calibre", "Academy",
