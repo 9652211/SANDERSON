@@ -9,13 +9,17 @@ public class Match {
 	public static String matchText() {
 		String output = "";
 		for(int i = 0; i<7; i++) {
+			char check = ' ';
 			for(int j = 0; j<7; j++) {
 				if(w.charAt(i)==g.charAt(j)) {
 					if (i==j) {
-						output.insert(i, "1");
+						check = '■';
+					} else if (check != '■') {
+						check = '□';
 					}
 				}
 			}
+			output = output + check;
 		}
 		return output;
 	}
