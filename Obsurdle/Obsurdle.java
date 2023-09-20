@@ -7,18 +7,24 @@ public class Obsurdle {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		Random rand = new Random();
+		Match match = new Match();
 		int wordCount = 500;
 		boolean repeat = false;
 		int maxTries = 7;
+		startScreen();
 		while (repeat = true) {
 			int tries = 0;
+			String word = wordlist[rand.nextInt(wordCount)];
+			System.out.println(word);
 			while (tries < maxTries) {
 				int triesLeft = maxTries - tries;
-				String word = wordlist[rand.nextInt(wordCount)];
-				startScreen();
+				System.out.println("            ");
+				System.out.println("            ");
+				System.out.println("Guess a 7-letter word: ");
 				String guess = sc.nextLine();
 				tries += 1;
-				System.out.println("Here's how you did: 1322123");
+				match.setWords(word, guess);
+				System.out.println("Here's how you did: " + match.matchText());
 				System.out.println("You have " + tries + " tries left.");
 			}
 		}
@@ -43,11 +49,17 @@ public class Obsurdle {
 		System.out.println("                             ");
 		System.out.println("                             ");
 		System.out.println("Welcome to OBSURDLE.");
-		System.out.println("To begin, guess a 7-letter word.");
-		System.out.println("Your output will be in the form of a string of 7 numbers.");
-		System.out.println("1: right letter, right position.");
-		System.out.println("2: right letter, wrong position.");
-		System.out.println("3: The letter is not contained in the word.");
+		System.out.println("The rules are similar to Wordle:");
+        System.out.println("You are trying to guess a seven-letter word.");
+        System.out.println("You'll be told whether you get a letter correctly guessed by these indicators: □ ■");
+        System.out.println("Example Word: Poggers");
+        System.out.println("| ■ |   |   |   |   | □ | □ |");
+        System.out.println();
+        System.out.println("| □ | indicates a right letter, wrong position,");
+        System.out.println("| ■ | indicates a right letter, right position,");
+        System.out.println("|   | indicates a wrong letter.");
+        System.out.println();
+        System.out.println("You will get 6 tries to get the word.");
 	}
 
 	public static String[] wordlist = { "Ability", "Backing", "Cabinet", "Absence", "Balance", "Calibre", "Academy",
