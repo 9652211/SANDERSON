@@ -1,5 +1,5 @@
 # Obsurdle
-## By [Dallin Soukup](https://github.com/9652211) and Tyler Le
+## By [Dallin Soukup](https://github.com/9652211) and [Tyler Le](https://github.com/TylerLeCmd)
 
 Similar to the word game Wordle, except the player receives 7 tries, and the word is 7 letters long
 
