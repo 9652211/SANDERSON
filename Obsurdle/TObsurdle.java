@@ -1,6 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
 
+//Uncompleted Version of Game
+//by Dallin Soukip and Tyler Le
 public class TObsurdle {
     public static void main(String[] args) {
         // Import Functions
@@ -12,32 +14,32 @@ public class TObsurdle {
         // Boolean Dec. / Variable Dec.
         boolean runtime = true;
         boolean lengthMatch = true;
-        boolean choese = true;
+        boolean win = false;
         int guessNum = 0;
 
-        // Grab a value for the array; Chooses word
+        // Grab a value for the array; Chooses word (Initial Pick)
         int wordNum = randVal.nextInt(500);
         String chosenWord = pintoBeans.wordsLong[wordNum].toLowerCase();
         char[] cLetters = chosenWord.toCharArray();
 
-        // Output Logic
+        // Start Menu
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println(" -- -- -- -- -- -- -- ");
-        System.out.println("| O| B| S| U| R| D| L|");
-        System.out.println(" -- -- -- -- -- -- -- ");
-        System.out.println("| E| O| B| S| U| R| D|");
-        System.out.println(" -- -- -- -- -- -- -- ");
-        System.out.println("| L| E| O| B| S| U| R|");
-        System.out.println(" -- -- -- -- -- -- -- ");
-        System.out.println("| D| L| E| O| B| S| U|");
-        System.out.println(" -- -- -- -- -- -- -- ");
-        System.out.println("| R| D| L| E| O| B| S|");
-        System.out.println(" -- -- -- -- -- -- -- ");
-        System.out.println("| U| R| D| L| E| O| B|");
-        System.out.println(" -- -- -- -- -- -- -- ");
-        System.out.println("| S| U| R| D| L| E| O|");
-        System.out.println(" -- -- -- -- -- -- -- ");
+        System.out.println(" --- --- --- --- --- --- --- ");
+        System.out.println("| O | B | S | U | R | D | L |");
+        System.out.println(" --- --- --- --- --- --- --- ");
+        System.out.println("| E | □ | - | S | - | R | □ |");
+        System.out.println(" --- --- --- --- --- --- --- ");
+        System.out.println("| ■ | E | O | B | ■ | U | R |");
+        System.out.println(" --- --- --- --- --- --- --- ");
+        System.out.println("| □ | L | ■ | O | B | - | U |");
+        System.out.println(" --- --- --- --- --- --- --- ");
+        System.out.println("| R | - | L | - | O | □ | S |");
+        System.out.println(" --- --- --- --- --- --- --- ");
+        System.out.println("| - | R | □ | L | ■ | O | ■ |");
+        System.out.println(" --- --- --- --- --- --- --- ");
+        System.out.println("| S | - | R | ■ | L | E | □ |");
+        System.out.println(" --- --- --- --- --- --- --- ");
         System.out.println("                ");
         System.out.println("                ");
         System.out.println("Welcome to OBSURDLE.");
@@ -54,33 +56,66 @@ public class TObsurdle {
         System.out.println("You will get 7 tries to get the word.");
         System.out.println("[Press ENTER to continue]");
         beans.nextLine();
+
+        // Game Logic
         while (runtime) {
-            if (!lengthMatch) {
-                System.out.println("Your word isn't seven letters long! Please try again!");
-                lengthMatch = true;
+            while (!win) {
+                if (!lengthMatch) {
+                    System.out.println("Your word isn't seven letters long! Please try again!");
+                    lengthMatch = true;
+                }
+                if (guessNum == 0) {
+                    System.out.println("To begin, guess a 7-letter word.");
+                } else if (guessNum <= 6) {
+                    System.out.println("\n" + "Make another guess!");
+                    System.out.println("Guesses Left = " + (7 - guessNum));
+                } else if (guessNum > 6) {
+                    System.out.println();
+                    System.out.println("Sorry, the word was " + chosenWord + ".");
+                    System.out.println("Oops, you're out of tries!");
+                    win = true;
+                }
+                if (guessNum <= 6) {
+                    String guess = beans.nextLine();
+                    // Word Validity
+                    char[] gLetters = guess.toCharArray();
+                    if (guess.length() != 7) {
+                        lengthMatch = false;
+                    }
+                    // // Game Logic
+                    if (lengthMatch) {
+                        System.out.print("|");
+                        for (int i = 0; i < 7; i++) {
+                            System.out.print(" " + gLetters[i] + " |");
+                        }
+                        System.out.println();
+                        sameT.setWords(chosenWord, guess);
+                        if (sameT.matchText().equals("| ■ | ■ | ■ | ■ | ■ | ■ | ■ |")) {
+                            System.out.println(sameT.matchText());
+                            System.out.println("You won! The word was " + chosenWord + "!");
+                            System.out.println("You guessed the word in " + guessNum + " tries!");
+                            win = true;
+                        } else {
+                            System.out.print(sameT.matchText());
+                            guessNum++;
+                        }
+                    }
+                }
             }
-            if (guessNum == 0) {
-                System.out.println("To begin, guess a 7-letter word.");
-            } else if (guessNum <= 7){
-                System.out.println("\n" +"Make another guess!");
-                System.out.println("Guesses Left = " + (7-guessNum));
-            } else if (guessNum > 7){
-                System.out.println("Oops, you're out of tries! Thanks for playing!");
+            //Not yet implemented to work
+            System.out.println("Do you want to play again?");
+            String restart = beans.nextLine();
+            if (restart.toLowerCase().equals("y")) {
+                runtime = true;
+                win = false;
+                guessNum = 0;
+                wordNum = randVal.nextInt(500);
+                chosenWord = pintoBeans.wordsLong[wordNum].toLowerCase();
+            } else if (restart.toLowerCase().equals("n")) {
+                System.out.println("Thanks for playing!");
+                runtime = false;
             }
-            String guess = beans.nextLine();
-            // Word Validity
-            char[] gLetters = guess.toCharArray();
-            if (guess.length() != 7) {
-                lengthMatch = false;
-            }
-            // // Game Logic
-            if (lengthMatch) {
-                System.out.println(chosenWord);
-                sameT.setWords(chosenWord, guess);
-                System.out.print(sameT.matchText());
-                guessNum ++;
-            }
-            // beans.close();
         }
+        beans.close();
     }
 }
