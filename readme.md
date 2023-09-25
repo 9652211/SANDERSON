@@ -14,3 +14,5 @@ Logic diagram:
 Gameplay: 
 
 ![Gameplay](https://github.com/9652211/SANDERSON/blob/main/images/Gameplay.png?raw=true)
+
+[Source code here](https://github.com/9652211/SANDERSON/tree/main/Obsurdle)
